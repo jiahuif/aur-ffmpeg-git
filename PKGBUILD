@@ -60,6 +60,7 @@ depends=(
   sdl2
   speex
   srt
+  svt-av1
   v4l-utils
   vmaf
   xz
@@ -149,6 +150,7 @@ build() {
         --enable-libspeex \
         --enable-libsrt \
         --enable-libssh \
+        --enable-libsvtav1 \
         --enable-libtheora \
         --enable-libv4l2 \
         --enable-libvidstab \
