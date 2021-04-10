@@ -4,7 +4,7 @@
 # Contributor: DrZaius <lou at fakeoutdoorsman.com>
 
 pkgname=ffmpeg-git
-pkgver=4.4.r101737.g896395bbcf
+pkgver=4.5.r101924.g282682a9fd
 pkgrel=1
 pkgdesc='Complete solution to record, convert and stream audio and video (git version)'
 arch=('x86_64')
@@ -107,6 +107,16 @@ build() {
         --disable-debug \
         --disable-static \
         --disable-stripping \
+        --cc=clang \
+        --cxx=clang++ \
+        --ld=clang \
+        --nm=llvm-nm \
+        --ar=llvm-ar \
+        --ranlib=llvm-ranlib \
+        --strip=llvm-strip \
+        --extra-cflags='-march=native' \
+        --extra-cxxflags='-march=native' \
+        --extra-ldflags='-march=native -fuse-ld=lld' \
         --enable-amf \
         --enable-avisynth \
         --enable-cuda-llvm \
